@@ -1,0 +1,74 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ABC Fitness Studio</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="home">
+    <header class="main-header">
+        <h1>ABC Fitness Studio</h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="schedule.html">Our Classes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-overlay">
+            <h2>Your Journey to Fitness Starts Here</h2>
+            <p>Join us at ABC Fitness Studio to elevate your body, mind, and lifestyle.</p>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <h2>What We Offer</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <img src="https://img.icons8.com/color/96/dumbbell.png" alt="HIIT Training" />
+                <h3>Weight Training</h3>
+                <p>Build strength with guided weight sessions.</p>
+            </div>
+            <div class="feature-card">
+                <img src="https://img.icons8.com/color/96/yoga.png" alt="Yoga" />
+                <h3>Yoga</h3>
+                <p>Improve flexibility, posture, and mental wellness.</p>
+            </div>
+            <div class="feature-card">
+                <img src="https://img.icons8.com/color/96/boxing.png" alt="Boxing" />
+                <h3>Boxing Classes</h3>
+                <p>High-intensity cardio to burn fat and build endurance.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <input type="email" id="subscribeEmail" placeholder="Enter your email">
+        <button onclick="handleSubscribe()">Subscribe</button>
+
+
+        <p>&copy; 2025 ABC Fitness Studio</p>
+    </footer>
+</body>
+
+</html>
+
+<script>
+    function handleSubscribe() {
+        const emailInput = document.getElementById('subscribeEmail');
+        const email = emailInput.value;
+
+        if (email) {
+            alert(`Thank you for subscribing, ${email}!`);
+            emailInput.value = '';
+        } else {
+            alert('Please enter a valid email address.');
+        }
+    }
+</script>

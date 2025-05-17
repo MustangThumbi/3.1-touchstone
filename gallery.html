@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <h1>Gallery</h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="schedule.html">Our Classes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="gallery">
+        <h2>Studio & Member Moments</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="image1.jpg" alt="Workout 1">
+                <button class="add-to-cart" data-name="Workout 1 Photo">Add to Cart</button>
+            </div>
+            <div class="gallery-item">
+                <img src="image2.jpg" alt="Workout 2">
+                <button class="add-to-cart" data-name="Workout 2 Photo">Add to Cart</button>
+            </div>
+            <div class="gallery-item">
+                <img src="image3.jpg" alt="Workout 3">
+                <button class="add-to-cart" data-name="Workout 3 Photo">Add to Cart</button>
+            </div>
+            <div class="gallery-item">
+                <img src="image4.jpg" alt="Workout 4">
+                <button class="add-to-cart" data-name="Workout 4 Photo">Add to Cart</button>
+            </div>
+            <div class="gallery-item">
+                <img src="image5.jpg" alt="Workout 5">
+                <button class="add-to-cart" data-name="Workout 5 Photo">Add to Cart</button>
+            </div>
+            <div class="gallery-item">
+                <img src="image6.jpg" alt="Workout 6">
+                <button class="add-to-cart" data-name="Workout 6 Photo">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="cart-actions">
+            <button id="clear-cart">Clear Cart</button>
+            <button id="process-order">Process Order</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 ABC Fitness Studio</p>
+    </footer>
+
+    <script>
+        let cart = [];
+
+        document.querySelectorAll(".add-to-cart").forEach(button => {
+            button.addEventListener("click", function() {
+                const itemName = this.dataset.name;
+                cart.push(itemName);
+                alert("Item added to the cart");
+            });
+        });
+
+        document.getElementById("clear-cart").addEventListener("click", function() {
+            if (cart.length > 0) {
+                cart = [];
+                alert("Cart cleared");
+            } else {
+                alert("No items to clear");
+            }
+        });
+
+        document.getElementById("process-order").addEventListener("click", function() {
+            if (cart.length > 0) {
+                cart = [];
+                alert("Thank you for your order");
+            } else {
+                alert("Cart is empty");
+            }
+        });
+    </script>
+</body>
+
+</html>
