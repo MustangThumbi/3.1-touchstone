@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gallery</title>
   <link rel="stylesheet" href="styles.css" />
- 
 </head>
 
 <body>
@@ -73,10 +72,16 @@
   </footer>
 
   <script>
-    const cart = [];
+    // Load cart from sessionStorage or initialize empty array
+    let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+
+    function saveCartToStorage() {
+      sessionStorage.setItem("cart", JSON.stringify(cart));
+    }
 
     function addToCart(item) {
       cart.push(item);
+      saveCartToStorage();
       alert(item + " added to cart.");
     }
 
@@ -109,7 +114,8 @@
         alert("Cart is already empty.");
         return;
       }
-      cart.length = 0;
+      cart = [];
+      sessionStorage.removeItem("cart");
       alert("Cart cleared.");
       closeCartModal();
     }
@@ -120,10 +126,12 @@
         return;
       }
       alert("Thank you for your order!");
-      cart.length = 0;
+      cart = [];
+      sessionStorage.removeItem("cart");
       closeCartModal();
     }
   </script>
 </body>
 
 </html>
+
